@@ -8,11 +8,11 @@ function createGame(player1, hour, player2) {
   `
 }
 
-let delay = -0.4;
+let delay = -0.1
 function createCard(date, day, games) {
-  delay = delay + 0.4;
+  delay = delay + 0.1
   return `
-    <div class="card" style="animation-delay: ${delay}s">
+    <div class="card">
       <h2>${date} <span>${day}</span></h2>
       <ul>
         ${games}
@@ -26,7 +26,7 @@ document.querySelector("#cards").innerHTML =
   createCard(
     "28/11",
     "segunda",
-    createGame("switzerland", "13:00", "brazil") +
-      createGame("portugal", "16:00", "uruguai")
+    createGame("switzerland", "13:00", "brazil")
+    //createGame("portugal", "16:00", "uruguai")
   ) +
   createCard("02/12", "sexta", createGame("brazil", "16:00", "cameroon"))
